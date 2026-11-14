@@ -1,0 +1,138 @@
+#Cabecario {
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    background-color: #101D35;
+    z-index: 999999;
+}
+
+#Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#Sigma {
+    margin-left: 10px;
+    display: flex;
+    color: white;
+    font-size: 30px;
+    align-items: center;
+    justify-content: center;
+    background-color: #2563EB;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+}
+
+#NomeDaMarca {
+    color: white;
+    font-size: 25px;
+    transition: 1s;
+    cursor: default;
+}
+
+#NomeDaMarca:hover {
+    color: rgb(255, 215, 0);
+}
+
+#Opcoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 10px;
+}
+
+.LinksOpcoes {
+    color: #D1D5DB;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+.LinksOpcoes:hover {
+    color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+#Vitrine {
+    width: 100vw;
+    height: 70vh;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto;
+    margin-top: 15vh;
+    margin-left: 0;
+    gap: 30px;
+    justify-content: center;
+    align-content: center;  
+}
+
+.Materia {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #101D35;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 20px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    width: 15vw;
+    height: 30vh;
+    box-sizing: border-box;
+    position: relative; 
+    overflow: hidden;  
+}
+
+.simbolo {
+    position: absolute;
+    font-size: 10rem;
+    font-weight: bold;
+    color: rgba(37, 99, 235, 0.04);
+    z-index: 1; 
+    transition: all 0.5s ease; 
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Materia h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+    transition: color 0.2s ease;
+}
+
+.Materia:hover {
+    border-color: #2563EB;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 20px -3px rgba(37, 99, 235, 0.25);
+}
+
+.Materia:hover .simbolo {
+    color: rgba(37, 100, 235, 0.15); /* Ajustado levemente para manter a harmonia do fundo branco */
+    transform: rotate(360deg);
+}

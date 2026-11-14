@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar conta · Math Magic</title>
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="css/EstilosEntrada.css">
+  <link rel="icon" type="image/png" href="img/LogoOF.jpg">
+</head>
+
+<body>
+  <main class="cartao">
+    <div class="marca">
+      <div class="logo" aria-hidden="true">&Sigma;</div>
+      <h1 class="nome-marca">Math Magic</h1>
+      <p class="subtitulo">Crie sua conta</p>
+    </div>
+
+    <form id="formulario">
+      <div class="campo">
+        <label for="nome">Nome completo</label>
+        <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+        <div class="invalid-feedback">Digite seu nome.</div>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" class="form-control" id="email" placeholder="voce@email.com" required>
+        <div class="invalid-feedback">Digite um e-mail válido.</div>
+      </div>
+
+      <div class="campo">
+        <label for="senha">Senha</label>
+        <input type="password" class="form-control" id="senha" minlength="6" placeholder="Mínimo 6 caracteres" required>
+        <div class="invalid-feedback">Use pelo menos 6 caracteres.</div>
+      </div>
+
+      <div class="campo">
+        <label for="confirmar">Confirmar senha</label>
+        <input type="password" class="form-control" id="confirmar" placeholder="Repita a senha" required>
+        <div class="invalid-feedback">As senhas precisam ser iguais.</div>
+      </div>
+
+      <button type="submit" class="btn btn-principal" onclick="Cadastrar()" type="submit">Criar conta</button>
+    </form>
+
+    <p class="rodape">Já tem conta? <a href="Login.html">Entrar</a></p>
+
+    <script src="js/cadastrar.js"></script>
+    <script src="js/verificarLogin.js"></script>
+    <script src="js/loginAtivo.js"></script>
+  </main>
+</body>
+
+</html>

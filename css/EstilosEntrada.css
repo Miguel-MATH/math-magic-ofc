@@ -1,0 +1,146 @@
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 15px;
+  background: #0d1117;
+  color: #e6edf3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  margin: 0;
+}
+
+.cartao {
+  width: 100%;
+  max-width: 400px;
+  background: #161b22;
+  border: 1px solid #262d38;
+  border-radius: 16px;
+  padding: 40px 36px;
+}
+
+.marca {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 14px;
+  background: #2563eb;
+  color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1;
+}
+
+.nome-marca {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin: 0 0 6px;
+}
+
+.subtitulo {
+  font-size: 14px;
+  color: #8b96a5;
+  margin: 0;
+}
+
+.campo {
+  margin-bottom: 20px;
+}
+
+.campo label {
+  display: block;
+  font-size: 13px;
+  color: #aab4c2;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  background: #0d1117;
+  border: 1px solid #2a323d;
+  color: #e6edf3;
+  height: 44px;
+  padding: 0 14px;
+  font-size: 15px;
+  border-radius: 10px;
+}
+
+.form-control::placeholder {
+  color: #5d6877;
+}
+
+.form-control:focus {
+  background: #0d1117;
+  color: #e6edf3;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.25);
+}
+
+.opcoes {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #aab4c2;
+}
+
+.form-check-input {
+  background-color: #0d1117;
+  border-color: #3a4452;
+}
+
+.form-check-input:checked {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.btn-principal {
+  width: 100%;
+  height: 46px;
+  background: #2563eb;
+  border: 0;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.btn-principal:hover,
+.btn-principal:focus {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.rodape {
+  text-align: center;
+  margin: 26px 0 0;
+  font-size: 14px;
+  color: #8b96a5;
+}
+
+a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.invalid-feedback {
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  .cartao {
+    padding: 32px 22px;
+  }
+}

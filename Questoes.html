@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Math Magic - Questions</title>
+
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+	<link rel="stylesheet" href="css/bootstrap/Checkbox-Group.css">
+	<link rel="stylesheet" href="css/Questoes.css">
+
+	<link rel="icon" type="image/png" href="img/LogoOF.jpg">
+</head>
+
+<body>
+	<div id="FundoAlerta"></div>
+	<div id="Alerta">
+		<h6>Atenção!</h6>
+		<p>Você ainda não selecionou uma alternativa.</p>
+		<button onclick="DesativarDisplay()" type="button">Entendido</button>
+	</div>
+
+	<nav id="Cabecario" class="navbar navbar-expand-md fixed-top">
+		<div class="container-fluid">
+
+			<a id="Logo" class="navbar-brand" href="AutorLifes.html">
+				<span id="Sigma" class="EstiloLetra">Σ</span>
+				<span id="NomeDaMarca" class="EstiloLetra">Math Magic</span>
+			</a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Opcoes"
+				aria-controls="Opcoes" aria-expanded="false" aria-label="Abrir menu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="Opcoes" class="collapse navbar-collapse justify-content-end">
+				<ul class="navbar-nav align-items-md-center">
+					<li class="nav-item">
+						<a href="index.html" class="nav-link LinksOpcoes EstiloLetra">Início</a>
+					</li>
+					<li class="nav-item">
+						<a href="Questoes.html" class="nav-link LinksOpcoes EstiloLetra atual"
+							aria-current="page">Questões</a>
+					</li>
+					<li class="nav-item">
+                        <a href="Ranking.html" class="nav-link LinksOpcoes EstiloLetra"
+                            aria-current="page">Ranking</a>
+                    </li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle LinksOpcoes EstiloLetra" href="#" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">UserMenu</a>
+						<div class="dropdown-menu dropdown-menu-end bg-darker" id="MenuUsuario">
+							<h5 id="UsuarioNome">Nome:</h5>
+							<p id="UsuarioEmail">email</p>
+							<p id="pontos">pontos</p>
+							<button class="btn btn-danger mt-1" type="button" onclick="logout()">Logout</button>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</nav>
+
+	<button type="button" id="BtnDesempenho" onclick="MostrarDesempenho()">Ver desempenho</button>
+
+	<div id="FundoDesempenho" onclick="MostrarDesempenho()"></div>
+
+	<div id="Desempenho" role="dialog" aria-labelledby="DesempenhoTitulo">
+		<button type="button" id="BtnFecharDesempenho" onclick="MostrarDesempenho()" aria-label="Fechar">✕</button>
+
+		<h2 id="DesempenhoTitulo">Seu desempenho</h2>
+		<p id="DesempenhoSubtitulo">Resumo das questões que você respondeu nesta página.</p>
+
+		<div id="DesempenhoResumo">
+			<div class="Stat StatAcertos">
+				<p class="StatNumero" id="StatAcertos">0</p>
+				<p class="StatRotulo">Acertos</p>
+			</div>
+			<div class="Stat StatErros">
+				<p class="StatNumero" id="StatErros">0</p>
+				<p class="StatRotulo">Erros</p>
+			</div>
+			<div class="Stat StatTotal">
+				<p class="StatNumero" id="StatTotal">0</p>
+				<p class="StatRotulo">Questões</p>
+			</div>
+			<div class="Stat StatPorcentagem">
+				<p class="StatNumero" id="StatPorcentagem">0.00%</p>
+				<p class="StatRotulo">Aproveitamento</p>
+			</div>
+		</div>
+
+		<h3 id="GraficoTitulo">Aproveitamento por matéria</h3>
+
+		<div id="Grafico">
+			<div class="BarraColuna">
+				<p class="BarraValor" id="ValorGeo">0.00%</p>
+				<div class="BarraTrilho">
+					<div class="Barra BarraGeo" id="BarraGeo"></div>
+				</div>
+				<div class="BarraSimbolo">Δ</div>
+				<p class="BarraNome">Geometria</p>
+				<p class="BarraDetalhe" id="DetalheGeo">0</p>
+			</div>
+
+			<div class="BarraColuna">
+				<p class="BarraValor" id="ValorAlg">0.00%</p>
+				<div class="BarraTrilho">
+					<div class="Barra BarraAlg" id="BarraAlg"></div>
+				</div>
+				<div class="BarraSimbolo">Σ</div>
+				<p class="BarraNome">Álgebra</p>
+				<p class="BarraDetalhe" id="DetalheAlg">0</p>
+			</div>
+
+			<div class="BarraColuna">
+				<p class="BarraValor" id="ValorComb">0.00%</p>
+				<div class="BarraTrilho">
+					<div class="Barra BarraComb" id="BarraComb"></div>
+				</div>
+				<div class="BarraSimbolo">σ</div>
+				<p class="BarraNome">Combinatória</p>
+				<p class="BarraDetalhe" id="DetalheComb">0</p>
+			</div>
+
+			<div class="BarraColuna">
+				<p class="BarraValor" id="ValorTn">0.00%</p>
+				<div class="BarraTrilho">
+					<div class="Barra BarraTn" id="BarraTn"></div>
+				</div>
+				<div class="BarraSimbolo">μ</div>
+				<p class="BarraNome">Teoria dos Números</p>
+				<p class="BarraDetalhe" id="DetalheTn">0</p>
+			</div>
+		</div>
+
+		<p id="GraficoLegenda">Cada barra mostra a porcentagem de acertos <b>em relação ao total</b>.</p>
+		<button id="BtnLimpar" class="btn btn-danger" onclick="Limpar()">Limpar</button>
+	</div>
+	<div class="container" id="Filtragem">
+		<h2>Math Magic</h2>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="filter-group">
+					<button type="button" class="filter-toggle"
+						onclick="ToggleDisplay(this, document.getElementById('listaAnos'), 'Anos')">Anos
+						▲</button>
+
+					<div id="listaAnos" class="filter-menu">
+						<label class="filter-option filter-select-all "><input id="TodosAnos" class="form-check-input"
+								type="checkbox" name="anos"
+								onclick="SelectAll(this, document.getElementsByClassName('Anos'))">Todos
+							os Anos</label>
+
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2025"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2025</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2024"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2024</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2023"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2023</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2022"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2022</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2021"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2021</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2020"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2020</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2019"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2019</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2018"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2018</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2017"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2017</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2016"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2016</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2015"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2015</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2014"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2014</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2013"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2013</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2012"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2012</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2011"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2011</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2010"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2010</label>
+						<label class="filter-option"><input class="form-check-input Anos" type="checkbox" name="anos"
+								value="2009"
+								onclick="UpdateSelectAll(document.getElementById('TodosAnos'), document.getElementsByClassName('Anos'))">2009</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="filter-group">
+					<button type="button" class="filter-toggle"
+						onclick="ToggleDisplay(this, document.getElementById('listaMateria'), 'Matérias')">Matérias
+						▲</button>
+
+					<div id="listaMateria" class="filter-menu">
+						<label class="filter-option filter-select-all ">
+							<input id="TodosMaterias" class="form-check-input" type="checkbox" name="anos"
+								onclick="SelectAll(this, document.getElementsByClassName('Materias')), ApresentarTopicos()">
+							Todas as Matérias
+						</label>
+						<label class="filter-option"><input class="form-check-input Materias" type="checkbox"
+								name="Materias" value="ALG"
+								onclick="UpdateSelectAll(document.getElementById('TodosMaterias'), document.getElementsByClassName('Materias')), ApresentarTopicos()">
+							Algebra
+						</label>
+						<label class="filter-option"><input class="form-check-input Materias" type="checkbox"
+								name="Materias" value="GEO"
+								onclick="UpdateSelectAll(document.getElementById('TodosMaterias'), document.getElementsByClassName('Materias'), ApresentarTopicos())">
+							Geometria
+						</label>
+						<label class="filter-option"><input class="form-check-input Materias" type="checkbox"
+								name="Materias" value="TN"
+								onclick="UpdateSelectAll(document.getElementById('TodosMaterias'), document.getElementsByClassName('Materias'), ApresentarTopicos())">
+							Teoria dos números
+						</label>
+						<label class="filter-option"><input class="form-check-input Materias" type="checkbox"
+								name="Materias" value="COMB"
+								onclick="UpdateSelectAll(document.getElementById('TodosMaterias'), document.getElementsByClassName('Materias'), ApresentarTopicos())">
+							Combinatória
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="filter-group">
+					<button type="button" class="filter-toggle"
+						onclick="ToggleDisplay(this, document.getElementById('listaTopicos'), 'Tópicos')">Tópicos
+						▲</button>
+
+					<div id="listaTopicos" class="filter-menu">
+						<label class="filter-option">Selecione pelo menos um Matéria</label>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="filter-group">
+					<button type="button" class="btn btn-success w-100" onclick="Filtrar()">Filtrar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="Questoes" class="container">
+		<h1 id="Titulo">Questões</h1>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script src="js/checkbox-group.js"></script>
+	<script src="js/userMenu.js"></script>
+	<script src="js/bancoQuestoes.js"></script>
+	<script src="js/topicos.js"></script>
+	<script src="js/exibirTopicos.js"></script>
+	<script src="js/alerta.js"></script>
+	<script src="js/exibirDesempenho.js"></script>
+	<script src="js/pontuacao.js"></script>
+	<script src="js/criarModelo.js"></script>
+	<script src="js/filtrar.js"></script>
+	<script src="js/verificarLogin.js"></script>
+	<script src="js/forcarLogin.js"></script>
+</body>
+
+</html>

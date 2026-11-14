@@ -1,0 +1,492 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #F3F5FA;
+    color: #1F2937;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* ===== NAVBAR (sem alterações) ===== */
+#Cabecario {
+    width: 100%;
+    min-height: 70px;
+    padding: 0;
+    background-color: #101D35;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+#Logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#Sigma {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #2563EB;
+    color: white;
+    font-size: 30px;
+    border-radius: 6px;
+}
+
+#NomeDaMarca {
+    color: white;
+    font-size: 25px;
+    transition: 0.2s;
+}
+
+#Logo:hover #NomeDaMarca {
+    color: #FFD700;
+}
+
+#Opcoes {
+    margin-right: 20px;
+}
+
+#Opcoes .navbar-nav {
+    gap: 22px;
+}
+
+.LinksOpcoes,
+.navbar-nav .nav-link.LinksOpcoes {
+    display: inline-block;
+    padding: 4px 0 6px;
+    color: #D1D5DB;
+    font-size: 19px;
+    cursor: pointer;
+    transition: color .3s, transform .3s;
+}
+
+.LinksOpcoes:hover,
+.navbar-nav .nav-link.LinksOpcoes:hover {
+    color: white;
+    transform: scale(1.08);
+}
+
+.atual,
+.navbar-nav .nav-link.atual {
+    color: white;
+    box-shadow: inset 0 -2px 0 #FFD700;
+}
+
+.navbar-toggler {
+    margin-right: 10px;
+    border-color: rgba(255, 255, 255, .4);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+#MenuUsuario {
+    min-width: 220px;
+    padding: 14px 18px;
+    background-color: #101D35;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 10px;
+}
+
+#UsuarioNome {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#UsuarioEmail {
+    margin: 2px 0 0;
+    color: #D1D5DB;
+    font-size: 13px;
+}
+
+#pontos {
+    color: rgb(255, 215, 0);
+}
+
+#Topo {
+    padding: 110px 20px 60px 20px;
+    background-color: #101D35;
+    border-bottom: 4px solid #FFD700;
+    text-align: center;
+}
+
+#Titulo {
+    margin: 0 0 12px 0;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+}
+
+#Subtitulo {
+    max-width: 560px;
+    margin: 0 auto;
+    color: #C7D2E5;
+    font-size: 17px;
+}
+
+
+/* ===== AUTOR ===== */
+#Equipe {
+    margin-top: 40px;
+    padding: 0 20px;
+}
+
+.Autor {
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    background-color: white;
+    border: 1px solid #D8E0EC;
+    border-top: 4px solid #2563EB;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.AutorSimbolo {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 16px auto;
+    background-color: #2563EB;
+    color: white;
+    font-size: 22px;
+    line-height: 36px;
+    border-radius: 6px;
+}
+
+.AutorFoto {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 20px auto;
+    background-color: #E2E8F0;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid #FFD700;
+    border-radius: 50%;
+}
+
+.AutorNome {
+    margin: 0 0 4px 0;
+    color: #101D35;
+    font-size: 21px;
+}
+
+.AutorFuncao {
+    margin: 0 0 16px 0;
+    color: #2563EB;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.AutorDados {
+    margin: 0 0 16px 0;
+    padding: 0;
+    list-style: none;
+    color: #64748B;
+    font-size: 14px;
+}
+
+.AutorFrase {
+    margin: 0 0 20px 0;
+    padding-top: 16px;
+    border-top: 1px solid #D8E0EC;
+    color: #374151;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.AutorLinks a {
+    display: inline-block;
+    padding: 7px 16px;
+    color: #2563EB;
+    border: 1px solid #D8E0EC;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.AutorLinks a:hover {
+    color: white;
+    background-color: #2563EB;
+    border-color: #2563EB;
+}
+
+
+/* ===== HISTÓRIA ===== */
+#Teorema {
+    width: 90%;
+    max-width: 720px;
+    margin: 40px auto 0 auto;
+    padding: 28px 32px 12px 32px;
+    background-color: white;
+    border: 1px solid #D8E0EC;
+    border-left: 5px solid #2563EB;
+    border-radius: 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+#Teorema h4 {
+    margin: 0 0 16px 0;
+    color: #101D35;
+    font-size: 22px;
+}
+
+#Teorema p {
+    margin: 0 0 16px 0;
+}
+
+.Noticia {
+    margin: 0 0 20px 0;
+    border: 1px solid #D8E0EC;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.NoticiaImagem {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.NoticiaTexto {
+    padding: 16px 20px;
+}
+
+.NoticiaTitulo {
+    margin: 0 0 8px 0;
+    color: #101D35;
+    font-size: 18px;
+}
+
+#Teorema .NoticiaFonte {
+    margin: 0 0 14px 0;
+    color: #64748B;
+    font-size: 13px;
+}
+
+.NoticiaLink {
+    display: inline-block;
+    padding: 8px 16px;
+    color: white;
+    background-color: #2563EB;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.NoticiaLink:hover {
+    color: white;
+    background-color: #1D4ED8;
+}
+
+#Apoie {
+    width: 90%;
+    max-width: 720px;
+    margin: 40px auto 0 auto;
+    padding: 28px 32px;
+    background-color: white;
+    border: 1px solid #D8E0EC;
+    border-top: 4px solid #FFD700;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#ApoieQr {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 20px auto;
+    padding: 8px;
+    border: 1px solid #D8E0EC;
+    border-radius: 10px;
+}
+
+#ApoieTitulo {
+    margin: 0 0 8px 0;
+    color: #101D35;
+    font-size: 24px;
+}
+
+#ApoieDescricao {
+    margin: 0 0 16px 0;
+    color: #64748B;
+    font-size: 15px;
+}
+
+#PixChave {
+    display: inline-block;
+    padding: 9px 14px;
+    background-color: #F3F5FA;
+    border: 1px dashed #94A3B8;
+    border-radius: 6px;
+    color: #101D35;
+    font-family: "Courier New", monospace;
+    font-size: 14px;
+}
+
+#PixAviso {
+    margin: 8px 0 0 0;
+    color: #475569;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#PixFavorecido {
+    margin: 4px 0 0 0;
+    color: #64748B;
+    font-size: 13px;
+}
+
+#ApoieOutras {
+    margin: 16px 0 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #D8E0EC;
+    color: #64748B;
+    font-size: 13px;
+}
+
+#ApoieOutras a {
+    color: #2563EB;
+}
+
+#Agradecimentos {
+    width: 90%;
+    max-width: 720px;
+    margin: 56px auto 0 auto;
+}
+
+#AgradecimentosTitulo {
+    margin: 0 0 4px 0;
+    color: #101D35;
+    font-size: 26px;
+    text-align: center;
+}
+
+.Agradecimento {
+    margin-top: 16px;
+    padding: 18px 24px;
+    background-color: white;
+    border: 1px solid #D8E0EC;
+    border-left: 5px solid #FFD700;
+    border-radius: 12px;
+}
+
+.Agradecimento h4 {
+    margin: 0 0 6px 0;
+    color: #101D35;
+    font-size: 18px;
+}
+
+.Agradecimento p {
+    margin: 0;
+    color: #64748B;
+    font-size: 15px;
+}
+
+#Rodape {
+    margin-top: 64px;
+    padding: 28px 20px;
+    background-color: #101D35;
+    border-top: 4px solid #FFD700;
+    color: #D1D5DB;
+    font-size: 14px;
+    text-align: center;
+}
+
+#LogoDoCefet {
+    height: 46px;
+    width: auto;
+    margin-bottom: 12px;
+    padding: 6px 10px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#Rodape p {
+    margin: 0;
+}
+
+
+@media (max-width: 600px) {
+    #Topo {
+        padding: 90px 20px 44px 20px;
+    }
+
+    #Titulo {
+        font-size: 28px;
+    }
+
+    #Subtitulo {
+        font-size: 15px;
+    }
+
+    #Teorema {
+        padding: 22px 18px 8px 18px;
+        font-size: 16px;
+    }
+
+    #Apoie {
+        padding: 24px 18px;
+    }
+}
+
+/* ===== NAVBAR NO CELULAR / TABLET (menu hambúrguer) ===== */
+@media (max-width: 767.98px) {
+    #Opcoes {
+        margin: 0;
+        padding: 8px 16px 16px 16px;
+        background-color: #101D35;
+        max-height: calc(100vh - 60px);
+        overflow-y: auto;
+    }
+
+    #Opcoes .navbar-nav {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 600px) {
+    #Cabecario {
+        height: auto;
+        min-height: 60px;
+    }
+
+    #Sigma {
+        margin-left: 10px;
+    }
+
+    #NomeDaMarca {
+        font-size: 17px;
+    }
+
+    .LinksOpcoes {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 380px) {
+    #NomeDaMarca {
+        font-size: 15px;
+    }
+
+    .LinksOpcoes {
+        font-size: 13px;
+    }
+}

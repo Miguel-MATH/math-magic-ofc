@@ -1,0 +1,284 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F4F7FC;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#Principal {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ===== NAVBAR (sem alterações) ===== */
+#Cabecario {
+    width: 100%;
+    min-height: 70px;
+    padding: 0;
+    background-color: #101D35;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+#Logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#Sigma {
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #2563EB;
+    color: white;
+    font-size: 30px;
+    border-radius: 6px;
+}
+
+#NomeDaMarca {
+    color: white;
+    font-size: 25px;
+    transition: 0.2s;
+}
+
+#Logo:hover #NomeDaMarca {
+    color: #FFD700;
+}
+
+#Opcoes {
+    margin-right: 20px;
+}
+
+#Opcoes .navbar-nav {
+    gap: 22px;
+}
+
+.LinksOpcoes,
+.navbar-nav .nav-link.LinksOpcoes {
+    display: inline-block;
+    padding: 4px 0 6px;
+    color: #D1D5DB;
+    font-size: 19px;
+    cursor: pointer;
+    transition: color .3s, transform .3s;
+}
+
+.LinksOpcoes:hover,
+.navbar-nav .nav-link.LinksOpcoes:hover {
+    color: white;
+    transform: scale(1.08);
+}
+
+.atual,
+.navbar-nav .nav-link.atual {
+    color: white;
+    box-shadow: inset 0 -2px 0 #FFD700;
+}
+
+.navbar-toggler {
+    margin-right: 10px;
+    border-color: rgba(255, 255, 255, .4);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+#MenuUsuario {
+    min-width: 220px;
+    padding: 14px 18px;
+    background-color: #101D35;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 10px;
+}
+
+#UsuarioNome {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#UsuarioEmail {
+    margin: 2px 0 0;
+    color: #D1D5DB;
+    font-size: 13px;
+}
+
+#pontos {
+    color: rgb(255, 215, 0);
+}
+
+/* ===== FIM NAVBAR ===== */
+
+
+/* ===== IMAGEM (lado esquerdo) ===== */
+#ImagemPrincipal {
+    width: 45%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/* ===== CONTEÚDO (lado direito) ===== */
+#Vitrine {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+}
+
+#Conteudo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3vh 20px;
+    text-align: center;
+}
+
+#FraseChamativa {
+    margin-bottom: 2vh;
+    color: blue;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+#Titulo {
+    margin-bottom: 2vh;
+    color: rgb(216, 63, 63);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 44px;
+}
+
+#Descricao {
+    width: 80%;
+    max-width: 480px;
+    margin: 0 auto 4vh auto;
+    color: #444546;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+#BtnQuestoes,
+#BtnMateriais {
+    display: block;
+    width: 80%;
+    max-width: 360px;
+    margin: 0 auto 2vh auto;
+    padding: 14px 20px;
+    color: white;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+#BtnQuestoes {
+    background-color: #2563eb;
+}
+
+#BtnMateriais {
+    background-color: #ff0000;
+}
+
+#BtnQuestoes:hover,
+#BtnMateriais:hover {
+    box-shadow: 4px 5px 5px rgb(106, 106, 106);
+    transform: translateY(-2px);
+}
+
+#LogoDoCefet {
+    display: block;
+    width: 120px;
+    margin: 3vh auto 0 auto;
+}
+
+
+/* ===== navbar colapsada (hambúrguer) ===== */
+@media (max-width: 1199px) {
+    #Cabecario {
+        min-height: 60px;
+    }
+
+    #Sigma {
+        margin-left: 10px;
+    }
+
+    #NomeDaMarca {
+        font-size: 17px;
+    }
+
+    #Opcoes {
+        margin: 0;
+        padding: 10px 16px 14px;
+    }
+
+    #Opcoes .navbar-nav {
+        gap: 6px;
+    }
+
+    .LinksOpcoes,
+    .navbar-nav .nav-link.LinksOpcoes {
+        font-size: 16px;
+    }
+}
+
+
+/* ===== TABLET E CELULAR: conteúdo em cima, imagem embaixo ===== */
+@media (max-width: 991px) {
+    #Principal {
+        flex-direction: column-reverse;
+    }
+
+    #Vitrine {
+        width: 100%;
+    }
+
+    #ImagemPrincipal {
+        width: 100%;
+        height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    #Conteudo {
+        padding: 36px 20px 30px 20px;
+    }
+
+    #Titulo {
+        font-size: 30px;
+    }
+
+    #Descricao {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    #BtnQuestoes,
+    #BtnMateriais {
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 380px) {
+    #NomeDaMarca {
+        font-size: 15px;
+    }
+
+    #BtnQuestoes,
+    #BtnMateriais {
+        font-size: 18px;
+    }
+}
