@@ -19,6 +19,19 @@ function AdicionarUsuario(user) {
     }
 }
 
+function verificarEmails(email) {
+    let storage = localStorage
+    let usuarios = JSON.parse(storage.getItem("Usuarios"))
+    if (usuarios) {
+        for (let i = 0; i < usuarios.length; i++) {
+            if (usuarios[i].email == email) {
+                return true
+            }
+        }
+    }
+    return false
+}
+
 function Cadastrar() {
     let form = document.getElementById("formulario")
     let nome = document.getElementById("nome").value
@@ -26,18 +39,22 @@ function Cadastrar() {
     let senha = document.getElementById("senha").value
     let senha_confimar = document.getElementById("confirmar").value
     if (form.reportValidity()) {
-        if (VerificarSenha(senha, senha_confimar)) {
-            let usuario = {}
-            usuario.nome = nome
-            usuario.email = email
-            usuario.senha = senha
-            usuario.pontos = 0
-            usuario.likes = []
-            let usuarios_novos = AdicionarUsuario(usuario)
-            EnviarDados(usuarios_novos)
-            alert("Cadastro realizado com sucesso!")
+        if (!verificarEmails(email)) {
+            if (VerificarSenha(senha, senha_confimar)) {
+                let usuario = {}
+                usuario.nome = nome
+                usuario.email = email
+                usuario.senha = senha
+                usuario.pontos = 0
+                usuario.likes = []
+                let usuarios_novos = AdicionarUsuario(usuario)
+                EnviarDados(usuarios_novos)
+                alert("Cadastro realizado com sucesso!")
+            } else {
+                alert("As senhas não correspondem!")
+            }
         } else {
-            alert("As senhas não correspondem!")
+            alert("Este e-mail ja está cadastrado!")
         }
     }
 
